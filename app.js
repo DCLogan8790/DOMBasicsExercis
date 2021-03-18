@@ -2,13 +2,16 @@
 const portillos = document.getElementById(`portillos`);
 
 // 2
-const images = document.getElementById(`img`);
+const images = document.getElementsByTagName(`img`);
 
 // 3
 const centered = document.getElementsByClassName(`center`);
 
 // 4
-const ginos = document.querySelector(`#ginos`);
+const ginosEast = document.querySelector(`#ginos`);
+// Or
+// const ginosEast = document.querySelector(`div`);
+
 console.dir(ginos);
 
 // 5
@@ -16,6 +19,9 @@ const pTags = document.querySelectorAll(`p`);
 
 // 6a
 const h1 = document.querySelector(`h1`);
+// Or
+// const h1 = document.querySelector(`.center`);
+
 
 // 6b
 h1.innerText = `Matt's Favorite Places To Eat In Sweet Home Chicago!`;
@@ -23,9 +29,11 @@ h1.innerText = `Matt's Favorite Places To Eat In Sweet Home Chicago!`;
 
 // 7a
 const others = document.querySelector(`#others`);
+// Or
+// const others = document.getElementById(`others`);
 console.dir(others)
 // 7b
-others.innerHTML = `<h4>Other favorites</h4>`;
+others.innerHTML = `<h3>Other favorites</h3>`;
 
 // 8a
 const aTag = document.querySelector(`a`);
@@ -50,6 +58,8 @@ console.dir(h4);
 
 // 11c
 const body = document.querySelector(`body`);
+// Or
+// document.querySelector(`body`).prend(h4);
 body.prepend(h4);
 
 // 12a
@@ -63,20 +73,47 @@ h5.innerText = `See you in the Windy City Sometime!`;
 aTag.insertAdjacentElement(`afterend`, h5)
 
 // 13
-const jayB = document.querySelector(`ul li`);
+const jayB = document.querySelector(` ul li`);
 jayB.remove();
+// Or
+// document.querySelector(`li`).remove();
+// Or 
+// const jayB = document.querySelectorAll(`li`);
+
 
 // Bonus
 
 // 14a
 const divs = document.querySelectorAll(`div`);
+console.dir(divs); //To see whats all in my div to select each one. Shows up as a Node list
+// Or
+// const divs = document.getElementsByTagName(`div`);
 
 // 14b
-
+for (div of divs) {
+    div.classList.toggle(`background`);
+}
+// Or for selecting each one for 
+// divs[0].classList.toggle(`background`)
 
 // 15a
- const hunger = ["Thanks",  "A", "Lot", "Now", "I", "Am", "Hungry"];
+const hungry = [
+    "Thanks",
+    "A",
+    "Lot",
+    "Now",
+    "I",
+    "Am",
+    "Hungry"
+];
 
 // 15b
-h5.insertAdjacentElement(`afterend`,hunger);
+for (word of hungry) {
+//     const body1 = document.querySelector(`body`);
+//     const span = document.createElement(`span`);
+//     span.innerText = `${word}`;
+//     body1.append(span)
+// OR
+document.querySelector(`body`).append(document.createElement(`span`).innerText = `${word}`);
+}
 
